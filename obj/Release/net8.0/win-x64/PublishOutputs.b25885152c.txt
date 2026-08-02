@@ -1,0 +1,2 @@
+C:\Users\pogor\Documents\VelesTechLauncher\bin\Release\net8.0\win-x64\publish\VelesTech.pdb
+C:\Users\pogor\Documents\VelesTechLauncher\bin\Release\net8.0\win-x64\publish\VelesTech.exe

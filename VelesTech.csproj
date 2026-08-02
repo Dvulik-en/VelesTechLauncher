@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <RootNamespace>VelesTech</RootNamespace>
+    <AssemblyName>VelesTech</AssemblyName>
+
+    <!-- Иконка .exe файла для Windows -->
+    <ApplicationIcon>Assets\app_icon.ico</ApplicationIcon>
+
+    <!-- Оптимизация под SingleFile сборку -->
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="11.1.3" />
+    <PackageReference Include="Avalonia.Desktop" Version="11.1.3" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.1.3" />
+    <PackageReference Include="CmlLib.Core" Version="3.3.9" />
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
+    <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="8.0.0" />
+  </ItemGroup>
+
+  <!-- Публичный конфиг копируется рядом с exe при билде.
+       Приватный launcher.secrets.json НЕ копируется — админ кладёт его сам. -->
+  <ItemGroup>
+    <None Update="launcher.config.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="launcher.secrets.example.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <!-- 
+    Явный блок <ItemGroup> для Assets убран.
+    Avalonia автоматически подтянет все файлы из папки Assets как AvaloniaResource.
+  -->
+
+</Project>

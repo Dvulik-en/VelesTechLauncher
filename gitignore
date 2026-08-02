@@ -1,0 +1,66 @@
+# ===== VelesTech Launcher — приватные файлы =====
+
+# Приватный конфиг с токеном Pterodactyl и IP сервера
+launcher.secrets.json
+**/launcher.secrets.json
+
+# Реальные API-ключи не должны попасть в git ни под каким соусом
+*.secret.json
+*.secrets.json
+*secrets*.json
+!launcher.secrets.example.json
+
+# ===== .NET / Visual Studio =====
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.vs/
+.vscode/
+*.swp
+*.swo
+*~
+.idea/
+*.pidb
+*.booproj
+*.svd
+*.pdb.meta
+*.ide/
+publish/
+
+# NuGet
+*.nupkg
+*.snupkg
+packages/
+!packages/build/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Rider
+.idea/
+*.sln.iml
+
+# ReSharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# ===== ОС =====
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.log
+
+# ===== Скачанные сборки во время разработки =====
+*.zip
+!Assets/**/*.zip
+client_package.zip
+modpack_download.zip
+_temp_extract_*/
+
+# Локально распакованные тестовые сборки
+.velestech/
+test_mc/

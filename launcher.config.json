@@ -1,0 +1,14 @@
+{
+  "//": "Публичный конфиг лаунчера — можно коммитить в git. Приватные поля (panelApiToken, serverIp) вынесены в launcher.secrets.json.",
+
+  "displayName": "VelesTech — NeoForge 1.21.1",
+  "minecraftVersion": "1.21.1",
+  "forgeVersion": "21.1.235",
+
+  "versionFolder": "FTB_StoneBlock_4_1.16.0",
+  "versionJar": "FTB_StoneBlock_4_1.16.0",
+  "versionJson": "FTB_StoneBlock_4_1.16.0",
+
+  "modpackJsonUrl": "https://dvulik-en.github.io/my-modpack-storage/modpack.json",
+  "filesBaseUrl": "https://dvulik-en.github.io/my-modpack-storage/"
+}
