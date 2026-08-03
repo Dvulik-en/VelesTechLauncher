@@ -1,9 +1,5 @@
 # 🔐 Настройка приватных данных лаунчера
 
-## ⚠️ КРИТИЧЕСКИ ВАЖНО — перед публикацией на GitHub
-
-Твой старый API-токен Pterodactyl **`ptlc_DxhEEs404YOrl5YhQyJCpXQAEHkcw9ojCb0xHdcQ3ec`** засветился в переписке. **Отзови его немедленно:**
-
 1. Открой панель: `https://mgr.hosting-minecraft.pro`
 2. Профиль (правый верхний угол) → **API Credentials**
 3. Удали старый токен (Delete)
@@ -42,12 +38,12 @@ copy launcher.secrets.example.json "%APPDATA%\VelesTech\launcher.secrets.json"
 ```json
 {
   "panelUrl": "https://mgr.hosting-minecraft.pro",
-  "panelServerId": "00b1d7f9",
+  "panelServerId": "server_id",
   "panelApiToken": "ptlc_ТВОЙ_НОВЫЙ_ТОКЕН",
   "archiveFileName": "velestech_client.zip",
 
-  "serverIp": "213.152.43.48",
-  "serverPort": 25572
+  "serverIp": "server_ip",
+  "serverPort": server_port
 }
 ```
 
