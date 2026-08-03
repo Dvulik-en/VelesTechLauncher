@@ -160,13 +160,10 @@ public class MinecraftLauncher
         //Environment.SetEnvironmentVariable("_JAVA_OPTIONS", null);
 
         OnStatus?.Invoke("Сборка команды запуска...");
-        // Убедитесь, что версия NeoForge загружается корректно
+        
         var process = await launcher.CreateProcessAsync("FTB_StoneBlock_4_1.16.0", launchOption, checkAndDownload: true);
 
-        // 7. ГЛАВНЫЙ ФИКС: удаляем modulepath-JAR из classpath
-        //    CmlLib собирает ${classpath} из ВСЕХ библиотек JSON. Но 8 JAR-ов ниже
-        //    должны идти ТОЛЬКО через -p (модуль-path). Иначе URL.setURLStreamHandlerFactory
-        //    вызывается дважды → factory already defined.
+
         int removed = StripModulePathJarsFromClasspath(process.StartInfo);
         OnStatus?.Invoke($"Modulepath-JAR удалено из classpath: {removed}");
 
@@ -203,9 +200,7 @@ public class MinecraftLauncher
         OnStatus?.Invoke("Клиент Minecraft завершён.");
     }
 
-    // ================================================================
-    // ГЛАВНЫЙ ФИКС — вырезаем modulepath-JAR из "-cp"
-    // ================================================================
+
 
     /// <summary>
     /// Ищет в аргументах процесса "-cp <classpath>" и удаляет из него JAR-ы,
